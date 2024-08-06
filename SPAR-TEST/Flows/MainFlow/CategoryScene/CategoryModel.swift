@@ -1,5 +1,5 @@
 //
-//  Category.swift
+//  CategoryModel.swift
 //  SPAR-TEST
 //
 //  Created by Steven Kirke on 05.08.2024.
