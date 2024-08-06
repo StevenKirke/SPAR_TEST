@@ -1,0 +1,140 @@
+
+{
+	"products": [
+		{
+		 "image": "Images/Mocks/Card_1",
+		 "productDescription": "сыр Ламбер 500/0 230г",
+		 "promotion": "Удар по ценам",
+		 "promotionType": "price",
+		 "rating": 4.1,
+		 "countReviews": 19,
+		 "price": 99.90,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_2",
+		 "productDescription": "Энергетический Напиток",
+		 "rating": 4.1,
+		 "countReviews": 8,
+		 "price": 95699.90,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_3",
+		 "productDescription": "Салат Овощной с Крабовыми Палочками",
+		 "rating": 4.1,
+		 "countReviews": 13,
+		 "price": 250.00,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_4",
+		 "productDescription": "Дорадо Охлажденная Непотрошеная 300-400г",
+		 "rating": 4.1,
+		 "countReviews": 11,
+		 "discount": 46,
+		 "price": 250.90,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_5",
+		 "productDescription": "Ролл Маленькая Япония 216г",
+		 "promotion": "Новинки",
+		 "promotionType": "new",
+		 "rating": 4.1,
+		 "countReviews": 6,
+		 "price": 367.50,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_6",
+		 "productDescription": "Огурцы тепличные cадово-огородные",
+		 "promotion": "Цена по карте",
+		 "promotionType": "card",
+		 "rating": 4.1,
+		 "countReviews": 34,
+		 "price": 5.92,
+		 "priceBeforeDiscount": 199.0,
+		 "country": "FR"
+		},
+		{
+		 "image": "Images/Mocks/Card_7",
+		 "productDescription": "Манго Кео",
+		 "promotion": "Новинки",
+		 "promotionType": "new",
+		 "rating": 4.1,
+		 "countReviews": 65,
+		 "discount": 12,
+		 "price": 1298.92,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_8",
+		 "productDescription": "Салат Овощной с Крабовыми Палочками",
+		 "rating": 4.1,
+		 "countReviews": 1,
+		 "discount": 25,
+		 "price": 120.92,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_9",
+		 "productDescription": "Салат Овощной с Крабовыми Палочками",
+		 "rating": 4.1,
+		 "countReviews": 9,
+		 "price": 1298.12,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_10",
+		 "productDescription": "Масло Слобода Рафинированное 1,8л",
+		 "promotion": "Удар по ценам",
+		 "promotionType": "price",
+		 "rating": 4.1,
+		 "countReviews": 25,
+		 "discount": 21,
+		 "price": 1298.92,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_11",
+		 "productDescription": "Салат Овощной с Крабовыми Палочками",
+		 "rating": 4.1,
+		 "countReviews": 15,
+		 "price": 250,
+		 "priceBeforeDiscount": 199.0,
+		 "country": "FR"
+		},
+		{
+		 "image": "Images/Mocks/Card_12",
+		 "productDescription": "Макаронные Изделия SPAR Спагетти 450г",
+		 "promotion": "Новинки",
+		 "promotionType": "new",
+		 "rating": 4.1,
+		 "countReviews": 4,
+		 "discount": 19,
+		 "price": 2600.54,
+		 "priceBeforeDiscount": 199.0
+		},
+		{
+		 "image": "Images/Mocks/Card_13",
+		 "productDescription": "Огурцы тепличные cадово-огородные",
+		 "rating": 4.1,
+		 "countReviews": 46,
+		 "price":120,
+		 "priceBeforeDiscount": 199.0,
+		 "country": "FR"
+		},
+		{
+		 "image": "Images/Mocks/Card_14",
+		 "productDescription": "Огурцы тепличные cадово-огородные",
+		 "promotion": "Цена по карте",
+		 "promotionType": "card",
+		 "rating": 4.1,
+		 "countReviews": 2,
+		 "discount": 25,
+		 "price": 1298.48,
+		 "priceBeforeDiscount": 199.0
+		}
+	]
+}
