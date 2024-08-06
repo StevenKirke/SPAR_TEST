@@ -10,6 +10,7 @@ import Foundation
 /// Карточка с данными товара, для верстки.
 final class MockProduct: ObservableObject {
 	@Published var product: CategoryModel.ViewModel.Product = CategoryModel.ViewModel.Product(
+		id: UUID().uuidString,
 		image: "Images/Mocks/Card_13",
 		productDescription: "сыр Ламбер 500/0 230г",
 		promotion: "Удар по ценам",

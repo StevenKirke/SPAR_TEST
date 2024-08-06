@@ -37,7 +37,24 @@ enum Countries: String {
 // swiftlint:disable nesting
 enum CategoryModel {
 	enum Request {
+		case success(Product)
+		case failure(Error)
 
+		
+
+		struct Product: Decodable {
+			let id: String
+			let image: String
+			let	productDescription: String
+			let promotion: String?
+			let promotionType: String?
+			let rating: Double
+			let countReviews: Int
+			let	price: Double
+			let discount: Int?
+			let	priceBeforeDiscount: Double
+			let country: String?
+		}
 	}
 
 	/// Полученные данные.
@@ -75,6 +92,8 @@ enum CategoryModel {
 		case failure(String)
 
 		struct Product {
+			/// ID.
+			let id: String
 			/// Изображение товара.
 			let image: String
 			/// Описание товара.
@@ -130,6 +149,7 @@ enum CategoryModel {
 extension CategoryModel.ViewModel.Product {
 	init(from: CategoryModel.Response.Product, reviews: String) {
 		self.init(
+			id: UUID().uuidString,
 			image: from.image,
 			productDescription: from.productDescription,
 			promotion: from.promotion ?? "",

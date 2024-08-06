@@ -9,6 +9,8 @@ import Foundation
 
 protocol ICategoryIterator: AnyObject {
 	func fitchCategoryList()
+	func addProduct(product: CategoryModel.Request.Product)
+	func removeProduct(productID: String)
 }
 
 final class CategoryIterator {
@@ -16,6 +18,7 @@ final class CategoryIterator {
 	// MARK: - Dependencies
 	let viewModel: ICategoryViewModel!
 	var worker: ICategoryWorker
+	let tempModelSave: [String: [CategoryModel.Request.Product]] = [:]
 
 	// MARK: - Private properties
 	// Файл с данными.
@@ -28,6 +31,14 @@ final class CategoryIterator {
 }
 
 extension CategoryIterator: ICategoryIterator {
+	func addProduct(product: CategoryModel.Request.Product) {
+		
+	}
+
+	func removeProduct(productID: String) {
+
+	}
+
 	func fitchCategoryList() {
 		self.worker.getDataProducts(resourceFile: fileName) { resultProductList in
 			switch resultProductList {
@@ -40,3 +51,7 @@ extension CategoryIterator: ICategoryIterator {
 		}
 	}
 }
+
+private extension CategoryIterator {
+
+	}

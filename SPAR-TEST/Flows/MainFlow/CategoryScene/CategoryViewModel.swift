@@ -15,7 +15,8 @@ protocol ICategoryViewModel: AnyObject {
 }
 
 final class CategoryViewModel: ObservableObject {
-	@Published var	modelForDisplayProducts: [CategoryModel.ViewModel.Product] = []
+	@Published var modelForDisplayProducts: [CategoryModel.ViewModel.Product] = []
+	@Published var saveProducts: [String: [CategoryModel.ViewModel.Product]] = [:]
 
 	// MARK: - Dependencies
 	let declinationNumberService: IDeclinationNumberService
