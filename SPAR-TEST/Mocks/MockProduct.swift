@@ -24,6 +24,7 @@ final class MockProduct: ObservableObject {
 			priceBeforeDiscount: "777.0"
 		),
 		country: Countries(rawValue: "FR") ?? Countries.empty,
-		isFavorite: false
+		isFavorite: false,
+		quantity: 0
 	)
 }

@@ -85,7 +85,6 @@ struct TitleAndButton: View {
 			default:
 				total = 0
 			}
-			print(total)
 			labelTotalPrice = assemblePrice(number: total)
 		}
 	}
@@ -118,7 +117,6 @@ struct TitleAndButton: View {
 
 	private func assemblePrice(number: Double) -> String {
 		let format = String(format: "%.1f", number)
-		print(format)
 		let assembler = "~\(format) ₽"
 		return assembler
 	}

@@ -95,6 +95,8 @@ enum CategoryModel {
 			var country: Countries
 			/// Понравившийся товара.
 			var isFavorite: Bool
+			/// Количество выбранного товара.
+			var quantity: Int
 		}
 
 		struct PriceFull {
@@ -140,7 +142,8 @@ extension CategoryModel.ViewModel.Product {
 				priceBeforeDiscount: from.priceBeforeDiscount
 			),
 			country: Self.assemblyCountry(country: from.country),
-			isFavorite: false
+			isFavorite: false,
+			quantity: 0
 		)
 	}
 

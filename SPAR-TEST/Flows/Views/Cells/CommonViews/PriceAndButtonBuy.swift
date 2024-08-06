@@ -18,7 +18,6 @@ struct ChangeBasketToAddProduct: View {
 			HeaderAddProduct(modelPrice: $modelPrice, quantity: $quantity)
 				.onChange(of: quantity) { _, _ in
 					if quantity == 0 {
-						print("OLOLO")
 						self.isBasket = false
 					}
 				}

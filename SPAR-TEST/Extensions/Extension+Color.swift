@@ -8,14 +8,6 @@
 import SwiftUI
 
 extension Color {
-	static func color(light: Color, dark: Color) -> Color {
-		@Environment(\.colorScheme) var colorScheme
-		print("\(colorScheme)")
-		return colorScheme == .dark ? dark : light
-	}
-}
-
-extension Color {
 	init(hex: String) {
 		let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
 		var int: UInt64 = 0
