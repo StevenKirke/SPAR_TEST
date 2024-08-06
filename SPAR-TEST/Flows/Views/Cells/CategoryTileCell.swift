@@ -31,17 +31,17 @@ struct CellTileView: View {
 					CountryView(country: modelProduct.country)
 				}
 				Spacer()
-				PriceAndButtonBuy(modelPrice: modelProduct.price)
+				ChangeBasketToAddProduct(modelPrice: modelProduct.price)
 			}
-			.padding(.horizontal, 4)
+			.padding(.horizontal, 8)
 			.padding(.bottom, 4)
 		}
 		.frame(
 			width: calculateWidth(),
-			height: 278,
+			height: calculateHeight(),
 			alignment: .top
 		)
-		.background(Theme.backgroundColor)
+		.background(FlatColor.BackgroundColor.light)
 		.clipShape(
 			.rect(
 				topLeadingRadius: radius.littleRadius,
@@ -55,6 +55,11 @@ struct CellTileView: View {
 
 	private func calculateWidth() -> CGFloat {
 		(UIScreen.main.bounds.width - 37) / 2
+	}
+
+	private func calculateHeight() -> CGFloat {
+		let width = (UIScreen.main.bounds.width - 37) / 2
+		return width * 1.6
 	}
 }
 

@@ -18,6 +18,7 @@ final class MockProduct: ObservableObject {
 		countReviews: "14 отзывов",
 		discount: "25%",
 		price: CategoryModel.ViewModel.PriceFull(
+			priceNumber: 888.99,
 			priceIntegerPart: "888",
 			priceShare: "99",
 			priceBeforeDiscount: "777.0"

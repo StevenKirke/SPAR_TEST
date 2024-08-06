@@ -98,6 +98,8 @@ enum CategoryModel {
 		}
 
 		struct PriceFull {
+			/// Цена товара.
+			var priceNumber: Double
 			/// Целая часть цены.
 			let priceIntegerPart: String
 			/// Десятичная часть цены.
@@ -180,6 +182,7 @@ extension CategoryModel.ViewModel.PriceFull {
 	init(from: Double, priceBeforeDiscount: Double) {
 		let disassembly = Self.disassemblePrice(price: from)
 		self.init(
+			priceNumber: from,
 			priceIntegerPart: disassembly.part,
 			priceShare: disassembly.share,
 			priceBeforeDiscount: String(priceBeforeDiscount)

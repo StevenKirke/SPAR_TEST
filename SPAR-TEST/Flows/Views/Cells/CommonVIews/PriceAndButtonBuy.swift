@@ -6,6 +6,42 @@
 //
 
 import SwiftUI
+
+struct ChangeBasketToAddProduct: View {
+
+	@State var modelPrice: CategoryModel.ViewModel.PriceFull
+	@State var isBasket: Bool = false
+	@State var quantity: Int = 0
+
+	var body: some View {
+		if isBasket {
+			HeaderAddProduct(modelPrice: $modelPrice, quantity: $quantity)
+				.onChange(of: quantity) { _, _ in
+					if quantity == 0 {
+						print("OLOLO")
+						self.isBasket = false
+					}
+				}
+
+		} else {
+			PriceAndButtonBuy(
+				modelPrice: $modelPrice,
+				action: {
+					changeBasket()
+				}
+			)
+		}
+	}
+
+	private func changeBasket() {
+		DispatchQueue.main.async {
+			withAnimation(.easeInOut(duration: 0.5)) {
+				self.isBasket.toggle()
+			}
+		}
+	}
+}
+
 /**
  Блок цены и кнопка купить, для карточки CellTileView.
  - Parameters:
@@ -16,10 +52,11 @@ import SwiftUI
 // MARK: - PriceAndButtonBuy
 struct PriceAndButtonBuy: View {
 
-	let modelPrice: CategoryModel.ViewModel.PriceFull
+	@Binding var modelPrice: CategoryModel.ViewModel.PriceFull
+	let action: () -> Void
 
 	var body: some View {
-		HStack {
+		HStack(spacing: 0) {
 			VStack(alignment: .leading, spacing: 0) {
 				TitlePriceView(price: CategoryModel.ViewModel.Price(from: modelPrice))
 				Text(modelPrice.priceBeforeDiscount)
@@ -29,7 +66,7 @@ struct PriceAndButtonBuy: View {
 			}
 			Spacer()
 			Button(
-				action: {},
+				action: action,
 				label: {
 					Image(GlobalImages.IconButtons.iconBasket)
 						.resizable()
@@ -39,7 +76,7 @@ struct PriceAndButtonBuy: View {
 				}
 			)
 			.padding(.horizontal)
-			.padding(.vertical, 10)
+			.frame(height: 36)
 			.background(FlatColor.BackgroundButton.green)
 			.clipShape(
 				RoundedRectangle(cornerRadius: GlobalRadius.Radius.buttonBasket)
@@ -75,11 +112,11 @@ private struct TitlePriceView: View {
 }
 
 #if DEBUG
-struct PriceAndButtonBuy_Previews: PreviewProvider {
+struct ChangeBasketToAddProduct_Previews: PreviewProvider {
 	static var previews: some View {
 		let model = MockProduct()
 		let price = model.product.price
-		PriceAndButtonBuy(modelPrice: price)
+		ChangeBasketToAddProduct(modelPrice: price)
 	}
 }
 #endif

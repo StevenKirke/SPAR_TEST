@@ -6,7 +6,12 @@
 	objectVersion = 70;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		324499392C622993009E5A68 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 324499382C622993009E5A68 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		324499382C622993009E5A68 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		32D1DA872C60F0E0003A4056 /* SPAR-TEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SPAR-TEST.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -38,6 +43,7 @@
 		32D1DA7E2C60F0E0003A4056 = {
 			isa = PBXGroup;
 			children = (
+				324499382C622993009E5A68 /* README.md */,
 				32D1DA892C60F0E0003A4056 /* SPAR-TEST */,
 				32D1DA882C60F0E0003A4056 /* Products */,
 			);
@@ -115,6 +121,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324499392C622993009E5A68 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

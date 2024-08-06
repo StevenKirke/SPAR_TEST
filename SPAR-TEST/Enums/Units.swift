@@ -9,19 +9,19 @@ import Foundation
 
 /// Перечисление, описывающие единицы товара.
 enum Units: Int, CaseIterable {
-	/// Килограмм
-	case kilogram
 	/// Штука
 	case thing
+	/// Килограмм
+	case kilogram
 
 	/// Название.
 	var title: String {
 		var title: String = ""
 		switch self {
-		case .kilogram:
-			title = "Кг"
 		case .thing:
 			title = "Шт"
+		case .kilogram:
+			title = "Кг"
 		}
 		return title
 	}

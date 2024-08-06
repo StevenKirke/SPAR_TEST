@@ -39,7 +39,10 @@ enum FlatColor {
 		static let promotion = Color(hex: "FFFFFF")
 		static let reviews = Color(hex: "262626")
 		static let country = Color(hex: "262626").opacity(0.6)
-
+		static let allPrice = Color(hex: "FFFFFF").opacity(0.8)
+		static let quantity = Color(hex: "FFFFFF")
+		static let pickerActive = Color(hex: "262626")
+		static let pickerNoActive = Color(hex: "262626").opacity(0.6)
 	}
 
 	enum ColorForPromotionType {
@@ -48,18 +51,15 @@ enum FlatColor {
 		static let price = Color(hex: "FC6A6F").opacity(0.9)
 	}
 
+	enum ColorPicker {
+		static let selected = Color(hex: "FFFFFF")
+		static let card = Color(hex: "5BCD7B").opacity(0.9)
+		static let price = Color(hex: "FC6A6F").opacity(0.9)
+	}
+
 	enum ShadowColor {
 		static let grey = Color(hex: "8B8B8B")
 	}
-}
-
-enum Colors {
-	static let backgroundColor = Color.color(light: FlatColor.BackgroundColor.light, dark: FlatColor.BackgroundColor.black)
-}
-
-enum Theme {
-	/// Цветовая схема, заднего фона.
-	static let backgroundColor = Colors.backgroundColor
 }
 
 struct Setting {

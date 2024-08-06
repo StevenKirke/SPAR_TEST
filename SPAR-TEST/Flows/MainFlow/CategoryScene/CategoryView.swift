@@ -19,7 +19,7 @@ struct CategoryView: View {
 		GridItem(.flexible(), spacing: 0)
 	]
 
-	@State var imageButton: String  = "Images/Icons/IconList"
+	@State var imageButton: String  = GlobalImages.IconButtons.iconList
 
 	@State var isList = false {
 		 didSet {

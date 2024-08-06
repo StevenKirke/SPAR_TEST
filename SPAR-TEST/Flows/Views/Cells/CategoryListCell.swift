@@ -13,7 +13,7 @@ struct CategoryListCell: View {
 	let width = UIScreen.main.bounds.width
 
 	var body: some View {
-		HStack(spacing: 8) {
+		HStack(spacing: 0) {
 			CardImageView(
 				image: modelProduct.image,
 				promotion: modelProduct.promotion,
@@ -22,12 +22,17 @@ struct CategoryListCell: View {
 			)
 			ProductCard(modelProduct: $modelProduct)
 		}
-		.padding(.horizontal)
-		.frame(width: width, height: 176)
+		.padding(.leading, 16)
+		.padding(.bottom, 16)
+		.frame(width: width, height: calculateHeight())
 		.overlay(
 			Rectangle()
 				.frame(width: nil, height: 1, alignment: .bottom)
 				.foregroundColor(FlatColor.BorderColor.grey), alignment: .bottom)
+	}
+
+	private func calculateHeight() -> CGFloat {
+		width / 2.1
 	}
 }
 
@@ -50,10 +55,11 @@ private struct ProductCard: View {
 					OrderLikeButtons(actionShowOrder: {}, actionAddFavorite: {})
 				}
 				Spacer()
-				PriceAndButtonBuy(modelPrice: modelProduct.price)
+				ChangeBasketToAddProduct(modelPrice: modelProduct.price)
 			}
 		.padding(.horizontal, 5)
-		.padding(.vertical, 16)
+		.padding(.leading, 8)
+		.padding(.trailing, 8)
 		.frame(alignment: .leading)
 	}
 }
@@ -101,19 +107,24 @@ private struct CardImageView: View {
 	private let radius = GlobalRadius.Radius.imageCellList.self
 
 	var body: some View {
+		let sizeImage = calculateHeight()
 		ZStack {
 			Image(image)
 				.resizable()
 				.scaledToFit()
+				.frame(width: sizeImage, height: sizeImage)
 			VStack(alignment: .leading, spacing: 0) {
 				if !promotion.isEmpty {
 					Promotion(text: promotion, color: color)
 				}
 				Spacer()
-				DiscountLabel(labelDiscount: discount)
+				if !discount.isEmpty {
+					DiscountLabel(labelDiscount: discount)
+						.frame(maxWidth: sizeImage, alignment: .leading)
+				}
 			}
+			.frame(maxWidth: sizeImage, alignment: .leading)
 		}
-		.frame(width: 144, height: 144)
 		.clipShape(
 			.rect(
 				topLeadingRadius: radius,
@@ -123,6 +134,11 @@ private struct CardImageView: View {
 			)
 		)
 	}
+
+	private func calculateHeight() -> CGFloat {
+		let width = UIScreen.main.bounds.width
+		return width / 2.6
+	}
 }
 
 // MARK: - GradeDiscountLabel
@@ -131,10 +147,13 @@ private struct DiscountLabel: View {
 	let labelDiscount: String
 
 	var body: some View {
+		HStack(spacing: 0) {
+			Spacer()
 			Text(labelDiscount)
 				.font(Font.custom(GlobalFonts.CeraRoundPro.bold, size: 16))
 				.foregroundColor(FlatColor.TextColor.discount)
-				.frame(maxWidth: .infinity, alignment: .trailing)
+		}
+
 	}
 }
 
